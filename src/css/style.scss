@@ -1,0 +1,594 @@
+@import "./variables";
+@import "./mediaquery";
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;600;800&family=Merienda+One&display=swap');
+
+@mixin display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+  background-image:
+  linear-gradient(to top right, rgba(245, 246, 252, 0.52), rgba(117, 75, 19, 0.93)),
+  url('../img/bg1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+nav {
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    padding: 0 2em;
+
+  
+  
+    .navcontent {
+      display: flex;
+      justify-content: space-between;
+        width: 100%;
+      margin: 10px auto;
+    }
+    .navbrand {
+      @include display();
+      font-family: 'Merienda One', cursive;
+      font-size: 25px;
+      color: var(--primaryColor);
+      margin: 5px;
+      .fa-hamburger {
+        color: var(--others);
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    ul {
+      @include display();
+      width: 100%;
+   
+    }
+  
+    a{
+      text-decoration: none;
+    }
+  
+   li {
+    overflow: hidden;
+    display: grid;
+    font-size: 18px;
+  
+    color: var(--white);
+    margin: 15px;
+    position: relative;
+      transition: all 0.2s;
+      @include for-size(phone-only) {
+        display: none;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--others);
+        animation: slide-out 300ms ease-in-out forwards;
+        
+      }
+    }
+    li:hover {
+      cursor: pointer;
+   
+      &:after {
+        animation: slide-in 300ms;
+      }
+    }
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100vh;
+    width: 80vw;
+    color: var(--white);
+    line-height: 2;
+    transition: all 0.5s;
+    @include for-size(phone-only) {
+        text-align: center;
+        align-items: center;
+        width: 100vw;
+      }
+  
+  
+    .icons i{
+        font-size: 2em;
+        margin:  0.5em 2.2em 0 0;
+        &:hover{
+            color: var( --primaryColor);
+        }
+        &:active{
+            transform: translateY(4px);
+        }
+    }
+    h1{
+        font-family: 'Merienda One', cursive;
+        font-size: 4em;
+       
+        
+    }
+    .typewriter{
+        font-size: 35px;
+       
+    }
+    .headernav {
+        display: flex;
+        
+    }
+    ul{
+        display: flex;
+        width: 100%;
+    }
+  
+    li {
+        overflow: hidden;
+        display: grid;
+    font-size: 18px;
+        color: var(--white);
+        margin: 15px;
+        margin-left: 0em;
+        position: relative;
+          transition: all 0.2s;
+          text-shadow: 2px 8px 6px rgba(175, 175, 175, 0.2);
+          @include for-size(phone-only) {
+            display: none;
+          }
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--others);
+            animation: slide-out 300ms ease-in-out forwards;
+            
+          }
+        }
+        li:hover {
+          cursor: pointer;
+        
+          &:after {
+            animation: slide-in 300ms;
+          }
+        }
+    
+}
+
+.toggleview{
+  display: none;
+}
+
+// about
+
+
+#about{
+   display: none;
+   justify-content: center;
+   align-items: center;
+    height: 100vh;
+    width: 70vw;
+    margin: auto;
+    .aboutInner{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white);
+        padding: 40px 80px;
+    
+        overflow-y: auto;
+        height: 80vh;
+        .aboutTitle {
+            display: block;
+            font-family: 'Merienda One', cursive;
+            font-size: 25px;
+            color: var(--primaryColor);
+            margin: 0 5px 40px 0;
+        }
+        h5{
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        i{
+            color: var(--primaryColor);
+            padding-right: 10px;
+        }
+        ul {
+            width: 50%;
+        }
+       li{
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        span{
+            color: var(--primaryColor);
+            padding: 4px;
+        }
+        .mySkills{
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .myServices{
+            margin: 20px 0 50px 0;
+            width: 100%;
+            display:flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            grid-gap: 1em;
+            align-items: center;
+          
+        }
+        .html{
+            @include display();
+            flex-direction: column;
+;            height: 8em;
+            width: 11em;
+            box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+            line-height: 4;
+       
+           i{
+               font-size: 25px;
+              
+           }
+           
+        }
+        .sass{
+            @include display();
+            flex-direction: column;
+            height: 8em;
+            width: 11em;
+            box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+            line-height: 4;
+       
+           i{
+               font-size: 25px;
+              
+           }
+        }
+        .javascript{
+            @include display();
+            flex-direction: column;
+            height: 8em;
+            width: 11em;
+            box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+            line-height: 4;
+       
+           i{
+               font-size: 25px;
+             
+             
+              
+           }
+        }
+        
+    }
+    
+   
+}
+
+.gif img{
+    width: 20vw;
+}
+.topAbout{
+    display: flex;
+}
+.html:hover, .sass:hover, .javascript:hover{
+ 
+    background-color: snow;
+    &:active{
+        transform: translateY(5%);
+    }
+
+}
+
+
+// resume
+
+#resume{
+  display: none;
+  justify-content: center;
+  align-items: center;
+   height: 100vh;
+   width: 70vw;
+   margin: auto;
+   transition: all 0.9s ease-in-out;
+   .resumeInner{
+       display: flex;
+       
+       flex-direction: column;
+       background-color: var(--white);
+       padding: 40px 80px;
+   
+       overflow-y: auto;
+       height: 80vh;
+       .resumeTitle {
+           display: block;
+           font-family: 'Merienda One', cursive;
+           font-size: 25px;
+           color: var(--primaryColor);
+           margin: 0 5px 40px 0;
+       }
+       p{
+         font-size: 18px;
+         font-family: 'Karla', sans-serif;
+         color: var(--black);
+       }
+       
+       h5{
+           font-size: 15px;
+           margin-bottom: 10px;
+           text-transform: uppercase;
+       }
+       i{
+           color: var(--primaryColor);
+           padding-right: 10px;
+           font-size: 50px;
+       }
+       ul {
+           width: 50%;
+       }
+       p{
+         color: var(--primaryColor);
+       }
+       
+      li{
+           display: flex;
+           align-items: center;
+           padding: 5px;
+           font-size: 15px;
+           margin-bottom: 15px;
+       }
+       span{
+           color: var(--primaryColor);
+           padding: 4px;
+       }
+       .mySkills{
+           margin-top: 60px;
+           display: flex;
+           flex-direction: column;
+       }
+       .myServices{
+           margin: 20px 0 50px 0;
+           width: 100%;
+           display:flex;
+           justify-content: center;
+           flex-wrap: wrap;
+           grid-gap: 1em;
+           align-items: center;
+         
+       }
+       
+       
+   }
+   
+  
+}
+
+.gif{
+  width: 25vw;
+}
+.topResume{
+  display: flex;
+}
+
+
+
+// portofolio
+.gridContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+     height: 100vh;
+     width: 70vw;
+     margin: auto;
+     transition: all 0.9s ease-in-out;
+
+     .grid{
+      display: grid;
+     grid-gap: 30px;
+     grid-template-columns: repeat(2, 1fr );
+     flex-wrap: wrap;
+      background-color: var(--white);
+      padding: 40px 60px;
+      overflow-y: auto;
+      height: 80vh;
+      width: 100%;
+      @include for-size(phone-only) {
+        grid-template-columns: repeat(1, 1fr );
+      }
+      
+
+      h1{
+        font-family: 'Merienda One', cursive;
+        font-size: 3em;
+        color: var(--primaryColor);
+       
+        
+    }
+ 
+       
+     }
+
+}
+
+
+
+// contact page
+
+#contact{
+  display: none;
+  justify-content: center;
+  align-items: center;
+   height: 100vh;
+   width: 70vw;
+   margin: auto;
+   transition: all 0.9s ease-in-out;
+   .contactInner{
+       display: flex;
+      text-align: center;
+       align-items: center;
+       flex-direction: column;
+       background-color: var(--white);
+       padding: 40px 80px;
+
+       overflow-y: auto;
+       height: 80vh;
+       .contactTitle {
+           display: block;
+           font-family: 'Merienda One', cursive;
+           font-size: 25px;
+           color: var(--primaryColor);
+           margin: 0 5px 80px 0;
+       }
+       p{
+        font-size: 18px;
+        font-family: 'Karla', sans-serif;
+        color: var(--black);
+        margin-top: 0.5em;
+       }
+       ul {
+           width: 50%;
+       }
+      li{
+           display: flex;
+           align-items: center;
+           padding: 5px;
+           font-size: 15px;
+           margin-bottom: 15px;
+       }
+       span{
+           color: var(--primaryColor);
+           padding: 4px;
+       }
+       .mySkills{
+           margin-top: 60px;
+           display: flex;
+           flex-direction: column;
+       }
+       .myServices{
+           margin: 20px 0 50px 0;
+           width: 100%;
+           display:flex;
+           justify-content: center;
+           flex-wrap: wrap;
+           grid-gap: 1em;
+           align-items: center;
+         
+       }
+       .html{
+           @include display();
+           flex-direction: column;
+;            height: 8em;
+           width: 11em;
+           box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+           line-height: 4;
+      
+          i{
+              font-size: 25px;
+             
+          }
+          
+       }
+       .sass{
+           @include display();
+           flex-direction: column;
+           height: 8em;
+           width: 11em;
+           box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+           line-height: 4;
+      
+          i{
+              font-size: 25px;
+             
+          }
+       }
+       .javascript{
+           @include display();
+           flex-direction: column;
+           height: 8em;
+           width: 11em;
+           box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+           line-height: 4;
+      
+          i{
+              font-size: 25px;
+            
+            
+             
+          }
+       }
+       
+   }
+   
+  
+}
+
+
+.inputForm{
+  @include display();
+  border: 1px solid var(--others);
+  border-radius: 50px;
+  background-color: var(--primaryColor);
+  box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10em;
+ 
+  p{
+    color: var(--white) !important;
+    
+  }
+}
+
+@keyframes slide-out{
+    0%{
+      transform: none
+    }
+    100%{
+      transform: translate(102%,0)
+    }
+  }
+  @keyframes slide-in{
+    0%{
+      transform: translate(-100%,0)
+    }
+    100%{
+      transform: none
+    }
+    }
