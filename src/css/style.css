@@ -54,7 +54,7 @@ nav .navcontent {
   margin: 10px auto;
 }
 
-nav .navbrand {
+nav .navbrand img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,17 +64,15 @@ nav .navbrand {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Merienda One', cursive;
-  font-size: 25px;
-  color: var(--primaryColor);
+  width: 4em;
   margin: 5px;
 }
 
-nav .navbrand .fa-hamburger {
+nav .navbrand img .fa-hamburger {
   color: var(--others);
 }
 
-nav .navbrand:hover {
+nav .navbrand img:hover {
   cursor: pointer;
 }
 
@@ -174,6 +172,8 @@ header .icons i {
 
 header .icons i:hover {
   color: var(--primaryColor);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 header .icons i:active {
@@ -186,8 +186,8 @@ header h1 {
   font-size: 4em;
 }
 
-header .typewriter {
-  font-size: 35px;
+header .typewrite {
+  font-size: 30px;
 }
 
 header .headernav {
@@ -219,7 +219,7 @@ header li {
 
 @media (max-width: 599px) {
   header li {
-    display: none;
+    margin: auto;
   }
 }
 
@@ -246,7 +246,7 @@ header li:hover:after {
 }
 
 .toggleview {
-  display: none;
+  visibility: visible;
 }
 
 #about {
@@ -260,6 +260,18 @@ header li:hover:after {
   height: 100vh;
   width: 70vw;
   margin: auto;
+  -webkit-animation: slide-in 300ms;
+          animation: slide-in 300ms;
+}
+
+@media (max-width: 599px) {
+  #about {
+    margin: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #about .aboutInner {
@@ -276,12 +288,26 @@ header li:hover:after {
   height: 80vh;
 }
 
+@media (max-width: 599px) {
+  #about .aboutInner {
+    padding: 40px 60px;
+  }
+}
+
 #about .aboutInner .aboutTitle {
   display: block;
   font-family: 'Merienda One', cursive;
   font-size: 25px;
   color: var(--primaryColor);
   margin: 0 5px 40px 0;
+}
+
+@media (max-width: 599px) {
+  #about .aboutInner .aboutTitle {
+    font-size: 20px;
+    width: 100%;
+    white-space: nowrap;
+  }
 }
 
 #about .aboutInner h5 {
@@ -296,6 +322,12 @@ header li:hover:after {
 
 #about .aboutInner ul {
   width: 50%;
+}
+
+@media (max-width: 599px) {
+  #about .aboutInner ul {
+    width: 100%;
+  }
 }
 
 #about .aboutInner li {
@@ -422,13 +454,37 @@ header li:hover:after {
   width: 20vw;
 }
 
+@media (max-width: 599px) {
+  .gif img {
+    width: 20vw;
+  }
+}
+
 .topAbout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+@media (max-width: 599px) {
+  .topAbout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .html:hover, .sass:hover, .javascript:hover {
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   background-color: snow;
 }
 
@@ -450,6 +506,8 @@ header li:hover:after {
   margin: auto;
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
+  -webkit-animation: slide-in 300ms;
+          animation: slide-in 300ms;
 }
 
 #resume .resumeInner {
@@ -568,6 +626,8 @@ header li:hover:after {
   margin: auto;
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
+  -webkit-animation: slide-in 300ms;
+          animation: slide-in 300ms;
 }
 
 .gridContainer .grid {
@@ -598,6 +658,12 @@ header li:hover:after {
   color: var(--primaryColor);
 }
 
+@media (max-width: 599px) {
+  .gridContainer .grid h1 {
+    font-size: 2em;
+  }
+}
+
 #contact {
   display: none;
   -webkit-box-pack: center;
@@ -611,6 +677,8 @@ header li:hover:after {
   margin: auto;
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
+  -webkit-animation: slide-in 300ms;
+          animation: slide-in 300ms;
 }
 
 #contact .contactInner {

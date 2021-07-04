@@ -47,7 +47,7 @@
       <!-- css-->
    <link rel="stylesheet" href="./src/css/style.css">
 
-    <link rel="shortcut icon" href="./src/img/Dlogo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/img/icon.svg" type="image/x-icon">
 </head>
 <body>
     <section>
@@ -56,14 +56,15 @@
 
         <nav>
             <div class="navcontent">
-                <div class="navbrand">Logo</div>
+                <div class="navbrand"><img src="./src/img/Vector 3.svg" alt="" srcset=""></div>
               <div>
                     <ul>
                        <a href="./index.html"><li>Home</li></a> 
                         <li class="aboutBtn">About</li>
-                      <li>Resume</li>
-                      <li>Portofolio</li> 
-                      <li>Contact</li>
+                        <li class="resume">Resume</li>
+                        <li class="portofolio">Portofolio</li>
+                        <li class="contact">Contact</li>
+                     
                     </ul>
               </div>
 
@@ -75,16 +76,17 @@
         <header>
            <div class="headerContent">
                 <h1>David Chinedu</h1>
-    
-                <div class="typewriter">Frontend Developer</div>
+
+             
+                <div class="typewrite" data-period="2000" data-type='[ "Frontend Developer", "I am Creative.", "I Love Design.", "I Love to Develop." ]'><span class="wrap"></span></div>
     
                <div class="headernav">
                     <ul>
                         <li>Home</li>
-                        <li class="aboutMe">About</li>
-                        <li>Resume</li>
-                        <li>Portofolio</li>
-                        <li>Contact</li>
+                        <li class="aboutBtn">About</li>
+                        <li class="resume">Resume</li>
+                        <li class="portofolio">Portofolio</li>
+                        <li class="contact">Contact</li>
                     </ul>
                     
                </div>
@@ -339,6 +341,28 @@
 
 
     </section>
+
+    <script>
+  gsap.from('.navbrand', {opacity: 0, duration: 2, y: -50})
+  gsap.from('h1', { duration: 1, y: 30, opacity: 0, delay: 1.2})
+  gsap.from('.typewriter', { duration: 1, y: 30, opacity: 0, delay: 2})
+  gsap.from('li', { duration: 1, y: 50, opacity: 0, stagger: 0.3})
+  gsap.from('i', {duration: 2, opacity: 0, x: 30, delay: 1.4})
+ 
+
+
+//   gsap.from('img', {
+//     scrollTrigger: {
+//       trigger: 'img',
+//       toggleActions: "restart none none none",
+//     },
+//     x: 60,
+//     duration: 1.1,
+//   })
+
+
+    </script>
 </body>
 <script src="./src/js/script.js"></script>
+<script src="./src/js/typewrter.js"></script>
 </html>
