@@ -40,7 +40,7 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 2em;
+  padding: 1em 2em;
 }
 
 nav .navcontent {
@@ -54,6 +54,14 @@ nav .navcontent {
   margin: 10px auto;
 }
 
+@media (max-width: 599px) {
+  nav .navcontent {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 nav .navbrand img {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,8 +72,14 @@ nav .navbrand img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 4em;
+  width: 3em;
   margin: 5px;
+}
+
+@media (max-width: 599px) {
+  nav .navbrand img {
+    display: none;
+  }
 }
 
 nav .navbrand img .fa-hamburger {
@@ -89,6 +103,12 @@ nav ul {
   width: 100%;
 }
 
+@media (max-width: 599px) {
+  nav ul {
+    margin: auto;
+  }
+}
+
 nav a {
   text-decoration: none;
 }
@@ -107,7 +127,8 @@ nav li {
 
 @media (max-width: 599px) {
   nav li {
-    display: none;
+    margin: 8px;
+    font-size: 15px;
   }
 }
 
@@ -170,6 +191,12 @@ header .icons i {
   margin: 0.5em 2.2em 0 0;
 }
 
+@media (max-width: 599px) {
+  header .icons i {
+    margin: 0.5em 1.2em 0 0;
+  }
+}
+
 header .icons i:hover {
   color: var(--primaryColor);
   -webkit-transition: all 0.5s;
@@ -184,6 +211,12 @@ header .icons i:active {
 header h1 {
   font-family: 'Merienda One', cursive;
   font-size: 4em;
+}
+
+@media (max-width: 599px) {
+  header h1 {
+    font-size: 3em;
+  }
 }
 
 header .typewrite {
@@ -340,6 +373,7 @@ header li:hover:after {
   padding: 5px;
   font-size: 15px;
   margin-bottom: 15px;
+  line-height: 1.7;
 }
 
 #about .aboutInner span {
@@ -456,7 +490,8 @@ header li:hover:after {
 
 @media (max-width: 599px) {
   .gif img {
-    width: 20vw;
+    width: 40vw;
+    margin-bottom: 2em;
   }
 }
 
@@ -494,7 +529,9 @@ header li:hover:after {
 }
 
 #resume {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -508,6 +545,16 @@ header li:hover:after {
   transition: all 0.9s ease-in-out;
   -webkit-animation: slide-in 300ms;
           animation: slide-in 300ms;
+}
+
+@media (max-width: 599px) {
+  #resume {
+    margin: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #resume .resumeInner {
@@ -628,6 +675,12 @@ header li:hover:after {
   transition: all 0.9s ease-in-out;
   -webkit-animation: slide-in 300ms;
           animation: slide-in 300ms;
+}
+
+@media (max-width: 599px) {
+  .gridContainer {
+    width: 90vw;
+  }
 }
 
 .gridContainer .grid {
