@@ -252,6 +252,7 @@ header{
     @include for-size(phone-only) {
      margin: auto;
      flex-direction: column;
+     max-width: 90vw;
   
   
     }
@@ -263,8 +264,9 @@ header{
         overflow-y: auto;
         height: 80vh;
         @include for-size(phone-only) {
+         padding: 40px;
        
-          padding: 40px 60px;
+       
          }
         
         .aboutTitle {
@@ -274,7 +276,7 @@ header{
             color: var(--primaryColor);
             margin: 0 5px 40px 0;
             @include for-size(phone-only) {
-              font-size: 20px;
+              font-size: 15px;
               width: 100%;
               white-space: nowrap;
            
@@ -435,6 +437,7 @@ header{
            font-size: 25px;
            color: var(--primaryColor);
            margin: 0 5px 40px 0;
+          
        }
        p{
          font-size: 18px;
@@ -529,6 +532,7 @@ header{
       width: 100%;
       @include for-size(phone-only) {
         grid-template-columns: repeat(1, 1fr );
+       
       }
       
 
@@ -537,7 +541,7 @@ header{
         font-size: 3em;
         color: var(--primaryColor);
         @include for-size(phone-only) {
-          font-size: 2em;
+          font-size: 1.3em;
       
          
         
@@ -553,6 +557,35 @@ header{
 
 
 
+.bar {
+  list-style: none;
+}
+.bar >li {
+  position: relative;
+}
+.bar>li:before {
+  content: '\25CF';
+  margin-right: 10px;
+  font-size: 20px;
+}
+.bar>li:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  border-left: 2px solid black;
+  margin-left: 5px;
+  height: 100%;
+}
+.bar >li:first-of-type:after {
+  top: 50%;
+}
+.bar >li:last-of-type:after {
+  top: -50%;
+}
+
+
+
 // contact page
 
 #contact{
@@ -564,6 +597,11 @@ header{
    margin: auto;
    transition: all 0.9s ease-in-out;
    animation: slide-in 300ms;
+   @include for-size(phone-only) {
+    width: 90vw;
+   
+ 
+   }
    .contactInner{
        display: flex;
       text-align: center;
@@ -580,6 +618,10 @@ header{
            font-size: 25px;
            color: var(--primaryColor);
            margin: 0 5px 80px 0;
+           @include for-size(phone-only) {
+           font-size: 18px;
+         
+           }
        }
        p{
         font-size: 18px;
@@ -667,16 +709,25 @@ header{
 
 .inputForm{
   @include display();
-  border: 1px solid var(--others);
+
   border-radius: 50px;
-  background-color: var(--primaryColor);
-  box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10em;
+  margin-bottom: 3em;
  
   p{
-    color: var(--white) !important;
+    color: var(--primaryColor) !important;
     
   }
+}
+
+.social {
+  margin: auto;
+
+i{
+
+  color: var(--primaryColor);
+  font-size: 2em;
+  margin:  0 15px 1em 0;
+}
 }
 
 @keyframes slide-out{
