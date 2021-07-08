@@ -155,9 +155,7 @@ nav li:hover:after {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -530,7 +528,9 @@ header li:hover:after {
 }
 
 #resume {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -553,6 +553,9 @@ header li:hover:after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 90vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -570,6 +573,12 @@ header li:hover:after {
   height: 80vh;
 }
 
+@media (max-width: 599px) {
+  #resume .resumeInner {
+    padding: 30px;
+  }
+}
+
 #resume .resumeInner .resumeTitle {
   display: block;
   font-family: 'Merienda One', cursive;
@@ -585,15 +594,16 @@ header li:hover:after {
 }
 
 #resume .resumeInner h5 {
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 #resume .resumeInner i {
   color: var(--primaryColor);
-  padding-right: 10px;
-  font-size: 50px;
+  padding-right: 15px;
+  font-size: 40px;
 }
 
 #resume .resumeInner ul {
@@ -630,6 +640,8 @@ header li:hover:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #resume .resumeInner .myServices {
@@ -657,6 +669,7 @@ header li:hover:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 3em;
 }
 
 .gridContainer {
@@ -714,38 +727,6 @@ header li:hover:after {
   .gridContainer .grid h1 {
     font-size: 1.3em;
   }
-}
-
-.bar {
-  list-style: none;
-}
-
-.bar > li {
-  position: relative;
-}
-
-.bar > li:before {
-  content: '\25CF';
-  margin-right: 10px;
-  font-size: 20px;
-}
-
-.bar > li:after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: '';
-  border-left: 2px solid black;
-  margin-left: 5px;
-  height: 100%;
-}
-
-.bar > li:first-of-type:after {
-  top: 50%;
-}
-
-.bar > li:last-of-type:after {
-  top: -50%;
 }
 
 #contact {

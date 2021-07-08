@@ -144,7 +144,7 @@ nav {
 }
 
 header{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
@@ -409,7 +409,7 @@ header{
 // resume
 
 #resume{
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
    height: 100vh;
@@ -420,6 +420,8 @@ header{
    @include for-size(phone-only) {
     margin: auto;
     flex-direction: column;
+    width: 90vw;
+    flex-wrap: wrap;
  
    }
    .resumeInner{
@@ -431,6 +433,11 @@ header{
    
        overflow-y: auto;
        height: 80vh;
+       @include for-size(phone-only) {
+       padding: 30px;
+      
+     
+       }
        .resumeTitle {
            display: block;
            font-family: 'Merienda One', cursive;
@@ -446,14 +453,15 @@ header{
        }
        
        h5{
-           font-size: 15px;
+           font-size: 18px;
            margin-bottom: 10px;
            text-transform: uppercase;
+           font-weight: normal;
        }
        i{
            color: var(--primaryColor);
-           padding-right: 10px;
-           font-size: 50px;
+           padding-right: 15px;
+           font-size:40px;
        }
        ul {
            width: 50%;
@@ -477,6 +485,8 @@ header{
            margin-top: 60px;
            display: flex;
            flex-direction: column;
+           flex-wrap: wrap;
+          
        }
        .myServices{
            margin: 20px 0 50px 0;
@@ -489,17 +499,21 @@ header{
          
        }
        
+      
        
    }
    
   
 }
 
+
+
 .gif{
   width: 25vw;
 }
 .topResume{
   display: flex;
+  margin-bottom: 3em;
 }
 
 
@@ -557,32 +571,6 @@ header{
 
 
 
-.bar {
-  list-style: none;
-}
-.bar >li {
-  position: relative;
-}
-.bar>li:before {
-  content: '\25CF';
-  margin-right: 10px;
-  font-size: 20px;
-}
-.bar>li:after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: '';
-  border-left: 2px solid black;
-  margin-left: 5px;
-  height: 100%;
-}
-.bar >li:first-of-type:after {
-  top: 50%;
-}
-.bar >li:last-of-type:after {
-  top: -50%;
-}
 
 
 
