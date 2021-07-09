@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(245, 246, 252, 0.52)), to(rgba(117, 75, 19, 0.93))), url("../img/bg1.jpg");
   background-image: linear-gradient(to top right, rgba(245, 246, 252, 0.52), rgba(117, 75, 19, 0.93)), url("../img/bg1.jpg");
   background-position: center;
@@ -155,7 +155,9 @@ nav li:hover:after {
 }
 
 header {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -207,7 +209,7 @@ header .icons i:active {
 }
 
 header h1 {
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 4em;
 }
 
@@ -328,7 +330,7 @@ header li:hover:after {
 
 #about .aboutInner .aboutTitle {
   display: block;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 25px;
   color: var(--primaryColor);
   margin: 0 5px 40px 0;
@@ -515,22 +517,24 @@ header li:hover:after {
   }
 }
 
-.html:hover, .sass:hover, .javascript:hover {
+.html:hover,
+.sass:hover,
+.javascript:hover {
   cursor: pointer;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: snow;
 }
 
-.html:hover:active, .sass:hover:active, .javascript:hover:active {
+.html:hover:active,
+.sass:hover:active,
+.javascript:hover:active {
   -webkit-transform: translateY(5%);
           transform: translateY(5%);
 }
 
 #resume {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -554,8 +558,6 @@ header li:hover:after {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 90vw;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
 }
 
@@ -579,9 +581,25 @@ header li:hover:after {
   }
 }
 
+#resume .resumeInner .topResume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3em;
+}
+
+@media (max-width: 599px) {
+  #resume .resumeInner .topResume {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 #resume .resumeInner .resumeTitle {
   display: block;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 25px;
   color: var(--primaryColor);
   margin: 0 5px 40px 0;
@@ -589,7 +607,7 @@ header li:hover:after {
 
 #resume .resumeInner p {
   font-size: 18px;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   color: var(--black);
 }
 
@@ -608,6 +626,12 @@ header li:hover:after {
 
 #resume .resumeInner ul {
   width: 50%;
+}
+
+@media (max-width: 599px) {
+  #resume .resumeInner ul {
+    width: 100%;
+  }
 }
 
 #resume .resumeInner p {
@@ -665,11 +689,10 @@ header li:hover:after {
   width: 25vw;
 }
 
-.topResume {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 3em;
+@media (max-width: 599px) {
+  .gif {
+    width: 100%;
+  }
 }
 
 .gridContainer {
@@ -718,7 +741,7 @@ header li:hover:after {
 }
 
 .gridContainer .grid h1 {
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 3em;
   color: var(--primaryColor);
 }
@@ -772,7 +795,7 @@ header li:hover:after {
 
 #contact .contactInner .contactTitle {
   display: block;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 25px;
   color: var(--primaryColor);
   margin: 0 5px 80px 0;
@@ -786,7 +809,7 @@ header li:hover:after {
 
 #contact .contactInner p {
   font-size: 18px;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   color: var(--black);
   margin-top: 0.5em;
 }

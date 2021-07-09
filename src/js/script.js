@@ -29,6 +29,7 @@ const removeFlex = function(){
 
 
 
+
   aboutBtn.forEach(function(i){
       i.addEventListener('click', function(){
         removeHeader();
